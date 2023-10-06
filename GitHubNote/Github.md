@@ -84,6 +84,9 @@
     - `git checkout master`重回master分支，以便建立另一个分支
     - `git merge <brachname>`合并两个分支,将分支合并到master中，参数是新建分支
     - 每一个分支可以当一个同学
+    - 如果都写一句话的话，可能会造成冲突！看你要accept哪个
+    - ![Alt text](image.png)
+    - 
 
 
 ## 其他资源
@@ -93,6 +96,7 @@
    - https://github.com/ruanyf/weekly
    - https://www.zhihu.com/column/mm-fe
    - 我是a同学写的话
+   - 我是a同学写的另一句话
 
 
 ## 要掌握的
