@@ -90,6 +90,7 @@
    - https://github.com521xueweihan/HelloGitHub
    - https://github.com/ruanyf/weekly
    - https://www.zhihu.com/column/mm-fe
+   - 我是a同学写的话
 
 
 ## 要掌握的
