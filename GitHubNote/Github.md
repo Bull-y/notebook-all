@@ -83,7 +83,8 @@
     - `git checkout -b a` 在当前分支为基础建立一个分支，所以这个代码最好在主分支上进行
     - `git checkout master`重回master分支，以便建立另一个分支
     - `git merge <brachname>`合并两个分支,将分支合并到master中，参数是新建分支
-    - 
+    - 每一个分支可以当一个同学
+
 
 ## 其他资源
 1. 找开源项目
@@ -105,3 +106,6 @@
 9. git commit -m "xxx" xxx为信息
 10. git log --start
 11. git checkout -b <branchname>
+12. git checkout -D <branchname>
+13. git checkout <branchname>
+14. git merge <branchname>
