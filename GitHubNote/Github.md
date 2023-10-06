@@ -86,8 +86,17 @@
     - 每一个分支可以当一个同学
     - 如果都写一句话的话，可能会造成冲突！看你要accept哪个
     - ![Alt text](image.png)
-    - 
-
+    - 如果a同学和b同学的冲突很多的话，可以选择全部采用之前的或现在的
+    - 这些命令还是要记住的
+15. Git和GitHub远程仓库
+    - 在GitHub建立一个新的仓库后，复制远程提交仓库指令
+    - `git remote add origin https://github.com/Bull-y/notebook-all.git`
+    - `git branch -M main` 改名，人权运动原因不让叫master了
+    - `git push -u origin main`开始推送
+    - 以上三条是不用记的，直接复制就行
+16. Git和GitHub远程仓库的互动命令
+    - 推送当前分支最新的提交到远程`git push`
+    - 拉取远程分支最新的提交到远程`git pull`
 
 ## 其他资源
 1. 找开源项目
@@ -95,8 +104,6 @@
    - https://github.com521xueweihan/HelloGitHub
    - https://github.com/ruanyf/weekly
    - https://www.zhihu.com/column/mm-fe
-   - 我是a同学写的话
-   - 我是a同学写的另一句话
 
 
 ## 要掌握的
@@ -111,6 +118,6 @@
 9. git commit -m "xxx" xxx为信息
 10. git log --start
 11. git checkout -b <branchname>
-12. git checkout -D <branchname>
+12. git branch -D <branchname>
 13. git checkout <branchname>
 14. git merge <branchname>
