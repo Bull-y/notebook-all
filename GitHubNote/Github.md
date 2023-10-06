@@ -80,10 +80,15 @@
 14. 分支：让不同的人之间能够相互协作
     - 每个仓库初始化后都会有个主分支，主分支必须是一个完成态(是可以跑的)
     - 他是一切分支的起点和终点，所以是长周期的项目话一定要用分支
-    - `git checkout -b a` 在当前节点建立一个分支
-    - `git checkout master`重回master分支
+    - `git checkout -b a` 在当前分支为基础建立一个分支，所以这个代码最好在主分支上进行
+    - `git checkout master`重回master分支，以便建立另一个分支
+    - `git merge <brachname>`合并两个分支,将分支合并到master中，参数是新建分支
+    - 每一个分支可以当一个同学
+    - 如果都写一句话的话，可能会造成冲突！看你要accept哪个
+    - ![Alt text](image.png)
     - 
-    - 
+
+
 ## 其他资源
 1. 找开源项目
    - https://github.com/trending/
@@ -91,6 +96,7 @@
    - https://github.com/ruanyf/weekly
    - https://www.zhihu.com/column/mm-fe
    - 我是a同学写的话
+   - 我是a同学写的另一句话
 
 
 ## 要掌握的
@@ -105,3 +111,6 @@
 9. git commit -m "xxx" xxx为信息
 10. git log --start
 11. git checkout -b <branchname>
+12. git checkout -D <branchname>
+13. git checkout <branchname>
+14. git merge <branchname>
