@@ -6,3 +6,4 @@
  - Markdown的书写
  - Opencv的学习
  - Python的学习
+ - CS213N的学习
