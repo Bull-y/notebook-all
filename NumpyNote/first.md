@@ -399,7 +399,7 @@
    ```
 
 总结：numpy用到的语法：
-1. np.zeros
+1. **np.zeros**
    - 默认为：float64
    - 一维数组：a=np.zeros(5)
    - 二维数组：b=np.zeros((5,5))
@@ -408,25 +408,25 @@
    - 使用dtype转换数据类型：
      - e=np.zeros(3)
      - e.dtype=int(int32)
-2. z.size表示有多少元素，z.itemsize表示一个元素占多少字节
-3. np.arange
+2. **z.size**表示有多少元素，**z.itemsize**表示一个元素占多少字节
+3. **np.arange**
    - 整型
    - 表示一维数组
    - 起，尾，步长
    - a=np.arange(6)
    - a=np.arange(6,10)
    - c=np.arange(6,20,2)
-4. np.array
+4. **np.array**
    - 默认为: int32
    - numpy.array(object, dtype=None)
    - a = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
    - b = np.array([[1, 2], [3, 4]])
    - c = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=np.float32)
-5. np.nonzero
+5. **np.nonzero**
    - 返回的是目标数组a中非零元素的索引
    - a = np.nonzero([1, 0, 2, 0, 3, 0])
    - b = np.nonzero([[1, 1, 0],[0, 0, 0],[1, 0, 3]])
-6. np.eye
+6. **np.eye**
    - 浮点数
    - numpy.eye(N,M=None,k=0,dtype=< class 'float' >,order='C)
    - a = np.eye(3)
@@ -436,7 +436,7 @@
    - e = np.eye(4, k=-2)
    - a = np.eye(3)[[1,2,0,1,2,1,2,1,2]]
    - a = np.eye(3,k=-1)[[1,2,0,1,2,1,2,1,2]]
-7. np.reshape
+7. **np.reshape**
    - 对数组的结构进行改变。
    - 函数中的参数需要满足乘积等于数组中数据总数。
    - reshape()函数得出的数组与原数组使用的是同一个存储空间，改变一个，另一个也随之改变。
@@ -444,20 +444,20 @@
    - print(np.array([1, 2, 3, 4, 5, 6, 7, 8]).reshape(2, 4))
    - print(np.array([1, 2, 3, 4, 5, 6, 7, 8,9]).reshape(-1, 3))
    - picture_data = data.reshape(-1,8,8,1)
-8. np.shape
+8. **np.shape**
    - 了解数组的结构
    - print(np.array([1, 2, 3, 4, 5, 6, 7, 8]).shape)
    - print(np.array([[1, 2], [2, 3], [3, 4]]).shape)
    - print(np.array([1, 2, 3, 4, 5, 6, 7, 8]).shape[0])
    - print(np.array([[1, 2], [2, 3], [3, 4]]).shape[1])
-9.  np.random.random
-    - 浮点数,从0-1中随机的均匀分布
-    - 一维：print(np.random.random(3))
-    - 二维：print(np.random.random((3, 4)))
-    - 三维：print(np.random.random((3, 4， 5)))
-10. np.random.rand
+9. **np.random.random**
+   - 浮点数,从0-1中随机的均匀分布
+   - 一维：print(np.random.random(3))
+   - 二维：print(np.random.random((3, 4)))
+   - 三维：print(np.random.random((3, 4， 5)))
+10. **np.random.rand**
     - 和np.random.random没有任何区别
-11. np.random.randn
+11. **np.random.randn**
     - 浮点数
     - 服从均值为0，方差为1的标准正态分布，也可以为负值
     - print(np.random.randn())
@@ -466,104 +466,104 @@
       - 指定一个数字，生成一维数组
     - print(np.random.randn(2,2))
       - 指定两个数字，生成二维数组
-12. np.random.randint(low，high，size，dtype)
-    - 整型
-    - print(np.random.randint(1))
-      - 0
-    - print(np.random.randint(2))
-      - 随机生成1或0的数字
-    - print(np.random.randint(1,5))
-      - 随机生成1-4的数字
-    - print(np.random.randint(1,5,2))
-      - 1行2列的范围1-4的数组
-    - print(np.random.randint(1,5,(2,2)))
-      - 2行2列的范围1-4的数组
-    - print(np.random.randint(low=2, high=10, size=(3, 3), dtype=np.uint8))
-      - uint8类型的3行3列范围2-9的数组
-13. np.random.uniform(low，high，size)
-    - 浮点型
-    - 无dtype
-    - 生成服从指定范围内的均匀分布的元素
-    - print(np.random.uniform())
-      - 参数不指定，生成的是一个0-1浮点型的数
-    - print(np.random.uniform(1))
-      - 1.0
-    - print(np.random.uniform(2))
-      - 1-2的浮点数
-    - print(np.random.uniform(5, 10))
-      - 5-9的浮点数
-    - print(np.random.uniform(5, 10,(3,3)))
-      - 3行3列的范围5-9的数组
-14. np.full(shape, fill_value, dtype=None, order=‘C’)
-    - 构造一个长度为 shape fill_value数组。
-    - print(np.full((2, 3), 7.1))
-      - 2行3列的均为7.1的数组
-15. numpy.zeros(shape, dtype=float, order='C')
-    - 构造一个长度为 shape 浮点型0数组。
-    - print(np.zeros(3))
-      - 生成1行3列的0数组
-    - print(np.zeros((3,2)))
-      - 生成3行2列的0数组
-16. empty(shape, dtype=float, order='C')
-    - 构造一个长度为 shape 的未初始化数组，这个数组的元素可能是内存位置上存在的任何数值。
-    - print(np.empty(3))
-    - print(np.empty((3,2)))
-    - print(np.empty(shape=(2, 3), dtype=int))
-17. numpy.ones(shape, dtype=None, order='C')
-    - 构造一个长度为 shape 浮点型1数组。
-    - print(np.ones(3))
-      - 生成1行3列的1数组
-    - print(np.ones((3,2)))
-      - 生成3行2列的1数组
-18.np.tile(A, reps)
-    - 以数组为单位进行扩展
-    - print(np.tile(np.arange(0, 40, 10), (3, 5)))
-19. np.r_[A ,B ,C]
-    - 拼接技术
-    - print(np.r_[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-20. numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
-    - 间隔采样，在指定的间隔内返回均匀间隔的数字
-    - print(np.linspace(-5, 5))
-      - 生成-5-5的间隔内返回均匀间隔的50个数字
-    - print(np.linspace(-5, 5, 5, False))
-      - 生成不包括5的间隔内返回均匀间隔的5个数字
-    - print(np.linspace(start=-5, stop=5, num=5, endpoint=True, retstep=True))
-      - 生成不包括5的间隔内返回均匀间隔的5个数字，后面加步长
-    - print(np.linspace(start=-5, stop=5, num=5, endpoint=True, retstep=True, dtype=int))
-      - 生成不包括5的间隔内返回均匀间隔的5个int数字，后面加步长
-    - (array([-5. , -2.5,  0. ,  2.5,  5. ]), 2.5)
-    - (array([-5, -3,  0,  2,  5]), 2.5)
-21. numpy.mean(a, axis=None, dtype=None, out=None, keepdims)
-    - print(np.mean(np.array([[1, 2], [3, 4]])))
-      - 返回所有元素的平均值
-    - print(np.mean(np.array([[1, 2], [3, 4]]),axis=1))
-      - 返回1行2列的对各行求的均值
-    - print(np.mean(np.array([[1, 2], [3, 4]]),axis=0))
-      - 返回1行2列的对各列求的均值
-    - print(np.mean(np.array([[1, 2], [3, 4]]),axis=1,dtype = np.float32))
-      - 返回1行2列的对各列求的float32型均值
-22. np.amax(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)
-    - 与np.max相同
-    - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
-23. amin(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)
-    - 与np.min相同
-    - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
-24. np.diag(v, k)
-    - 返回二维数组v中k相关的对角线数据组成的一维数组
-    - 返回一个构造的二维与k相关的类对角线形二维数组
-    - 一维数组k缺省：print(np.diag(np.arange(1, 6)))
-      - 5,5
-    - 一维数组k+1：print(np.diag(np.arange(1, 6),k=1))
-      - 6,6
-    - 一维数组k-1：print(np.diag(np.arange(1, 6),k=-1))
-      - 6,6
-    - 二维数组k缺省：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])))
-      - 1,3
-    - 二维数组k+1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=1))
-      - 1,2
-    - 二维数组k-1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=-1))
-      - 1,2
-25. np.pad(array, pad_width, mode, **kwargs)
+12. **np.random.randint(low，high，size，dtype)**
+       - 整型
+       - print(np.random.randint(1))
+         - 0
+       - print(np.random.randint(2))
+         - 随机生成1或0的数字
+       - print(np.random.randint(1,5))
+         - 随机生成1-4的数字
+       - print(np.random.randint(1,5,2))
+         - 1行2列的范围1-4的数组
+       - print(np.random.randint(1,5,(2,2)))
+         - 2行2列的范围1-4的数组
+       - print(np.random.randint(low=2, high=10, size=(3, 3), dtype=np.uint8))
+         - uint8类型的3行3列范围2-9的数组
+13. **np.random.uniform(low，high，size)**
+      - 浮点型
+      - 无dtype
+      - 生成服从指定范围内的均匀分布的元素
+      - print(np.random.uniform())
+        - 参数不指定，生成的是一个0-1浮点型的数
+      - print(np.random.uniform(1))
+        - 1.0
+      - print(np.random.uniform(2))
+        - 1-2的浮点数
+      - print(np.random.uniform(5, 10))
+        - 5-9的浮点数
+      - print(np.random.uniform(5, 10,(3,3)))
+        - 3行3列的范围5-9的数组
+14. **np.full(shape, fill_value, dtype=None, order=‘C’)**
+      - 构造一个长度为 shape fill_value数组。
+      - print(np.full((2, 3), 7.1))
+        - 2行3列的均为7.1的数组
+15. **numpy.zeros(shape, dtype=float, order='C')**
+      - 构造一个长度为 shape 浮点型0数组。
+      - print(np.zeros(3))
+        - 生成1行3列的0数组
+      - print(np.zeros((3,2)))
+        - 生成3行2列的0数组
+16. **empty(shape, dtype=float, order='C')**
+      - 构造一个长度为 shape 的未初始化数组，这个数组的元素可能是内存位置上存在的任何数值。
+      - print(np.empty(3))
+      - print(np.empty((3,2)))
+      - print(np.empty(shape=(2, 3), dtype=int))
+17. **numpy.ones(shape, dtype=None, order='C')**
+      - 构造一个长度为 shape 浮点型1数组。
+      - print(np.ones(3))
+        - 生成1行3列的1数组
+      - print(np.ones((3,2)))
+        - 生成3行2列的1数组
+18. **np.tile(A, reps)**
+      - 以数组为单位进行扩展
+      - print(np.tile(np.arange(0, 40, 10), (3, 5)))
+19. **np.r_[A ,B ,C]**
+      - 拼接技术
+      - print(np.r_[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+20. **numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)**
+      - 间隔采样，在指定的间隔内返回均匀间隔的数字
+      - print(np.linspace(-5, 5))
+        - 生成-5-5的间隔内返回均匀间隔的50个数字
+      - print(np.linspace(-5, 5, 5, False))
+        - 生成不包括5的间隔内返回均匀间隔的5个数字
+      - print(np.linspace(start=-5, stop=5, num=5, endpoint=True, retstep=True))
+        - 生成不包括5的间隔内返回均匀间隔的5个数字，后面加步长
+      - print(np.linspace(start=-5, stop=5, num=5, endpoint=True, retstep=True, dtype=int))
+        - 生成不包括5的间隔内返回均匀间隔的5个int数字，后面加步长
+      - (array([-5. , -2.5,  0. ,  2.5,  5. ]), 2.5)
+      - (array([-5, -3,  0,  2,  5]), 2.5)
+21. **numpy.mean(a, axis=None, dtype=None, out=None, keepdims)**
+      - print(np.mean(np.array([[1, 2], [3, 4]])))
+        - 返回所有元素的平均值
+      - print(np.mean(np.array([[1, 2], [3, 4]]),axis=1))
+        - 返回1行2列的对各行求的均值
+      - print(np.mean(np.array([[1, 2], [3, 4]]),axis=0))
+        - 返回1行2列的对各列求的均值
+      - print(np.mean(np.array([[1, 2], [3, 4]]),axis=1,dtype = np.float32))
+        - 返回1行2列的对各列求的float32型均值
+22. **np.amax(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
+      - 与np.max相同
+      - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
+23. **amin(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
+      - 与np.min相同
+      - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
+24. **np.diag(v, k)**
+      - 返回二维数组v中k相关的对角线数据组成的一维数组
+      - 返回一个构造的二维与k相关的类对角线形二维数组
+      - 一维数组k缺省：print(np.diag(np.arange(1, 6)))
+        - 5,5
+      - 一维数组k+1：print(np.diag(np.arange(1, 6),k=1))
+        - 6,6
+      - 一维数组k-1：print(np.diag(np.arange(1, 6),k=-1))
+        - 6,6
+      - 二维数组k缺省：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])))
+        - 1,3
+      - 二维数组k+1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=1))
+        - 1,2
+      - 二维数组k-1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=-1))
+        - 1,2
+25. `np.pad(array, pad_width, mode, **kwargs)`
     - 为了避免因为卷积运算导致输出图像缩小和图像边缘信息丢失，常常采用图像边缘填充技术
     - 一维数组：print(np.pad(np.arange(1, 6), (2, 3), 'constant', constant_values=(4, 6)))
       - 左右添加
@@ -573,28 +573,28 @@
       - 行和列添加不同的值
     - 二维数组：print(np.pad((np.arange(95, 99).reshape(2,2)), ((3, 2), (2, 3)), 'constant'))
       - 行和列添加0
-26. np.floor
+26. **np.floor**
     - print(np.floor([-2.5, -1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.0]))
     - 向下取整
-27. np.ceil
+27. **np.ceil**
     - print(np.ceil([-2.5, -1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.0]))
     - 向上取整
-28. numpy.allclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)
+28. **numpy.allclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)**
     - absolute(a - b) <= (atol + rtol * absolute(b))返回True
     - print(np.allclose([0.12, 0.17, 0.24, 0.29], [0.13, 0.19, 0.26, 0.31], 0.1))
       - False
     - print(np.allclose([0.12, 0.17, 0.24, 0.29], [0.13, 0.18, 0.26, 0.31], 0.1))
       - True
-29. numpy.isclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)
+29. **numpy.isclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)**
     - absolute(a - b) <= (atol + rtol * absolute(b))返回True
     - 比较每一个值
-30. np.array_equal
+30. **np.array_equal**
     - 检查两个数组是否具有相同的形状和元素,还可用在数组和列表之间、列表与列表间的比较
     - np.array_equal(A,B)
       - 必须形状一样
       - 必须参数一样
       - 才True
-31. np.unique
+31. **np.unique**
     - 该方法排序后，会对数组重新进行降重排序
     - print(np.unique(np.array([6, 5, 7, 3, 6, 3, 4, 3, 9, 3, 0, 6]))) 
       - [0 3 4 5 6 7 9]
