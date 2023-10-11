@@ -545,9 +545,11 @@
 22. **np.amax(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
       - 与np.max相同
       - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
+      - keepdims=True，表示列表示
 23. **amin(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
       - 与np.min相同
       - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
+      - keepdims=True，表示列表示
 24. **np.diag(v, k)**
       - 返回二维数组v中k相关的对角线数据组成的一维数组
       - 返回一个构造的二维与k相关的类对角线形二维数组
