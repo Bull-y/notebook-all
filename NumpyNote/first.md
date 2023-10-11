@@ -543,12 +543,64 @@
     - print(np.mean(np.array([[1, 2], [3, 4]]),axis=1,dtype = np.float32))
       - 返回1行2列的对各列求的float32型均值
 22. np.amax(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)
+    - 与np.max相同
+    - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
 23. amin(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)
-24. np.diag
-25. np.pad
+    - 与np.min相同
+    - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
+24. np.diag(v, k)
+    - 返回二维数组v中k相关的对角线数据组成的一维数组
+    - 返回一个构造的二维与k相关的类对角线形二维数组
+    - 一维数组k缺省：print(np.diag(np.arange(1, 6)))
+      - 5,5
+    - 一维数组k+1：print(np.diag(np.arange(1, 6),k=1))
+      - 6,6
+    - 一维数组k-1：print(np.diag(np.arange(1, 6),k=-1))
+      - 6,6
+    - 二维数组k缺省：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])))
+      - 1,3
+    - 二维数组k+1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=1))
+      - 1,2
+    - 二维数组k-1：print(np.diag(np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]]), k=-1))
+      - 1,2
+25. np.pad(array, pad_width, mode, **kwargs)
+    - 为了避免因为卷积运算导致输出图像缩小和图像边缘信息丢失，常常采用图像边缘填充技术
+    - 一维数组：print(np.pad(np.arange(1, 6), (2, 3), 'constant', constant_values=(4, 6)))
+      - 左右添加
+    - 二维数组：print(np.pad((np.arange(95, 99).reshape(2, 2)), ((3, 2), (2, 3)), 'constant', constant_values=(1, 2)))
+      - 行和列都添加相同的值
+    - 二维数组：print(np.pad((np.arange(95, 99).reshape(2,2)), ((3, 2), (2, 3)), 'constant', constant_values=((0, 0), (1, 2))))
+      - 行和列添加不同的值
+    - 二维数组：print(np.pad((np.arange(95, 99).reshape(2,2)), ((3, 2), (2, 3)), 'constant'))
+      - 行和列添加0
 26. np.floor
+    - print(np.floor([-2.5, -1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.0]))
+    - 向下取整
 27. np.ceil
-28. np.where
-29. np.allclose
+    - print(np.ceil([-2.5, -1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.0]))
+    - 向上取整
+28. numpy.allclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)
+    - absolute(a - b) <= (atol + rtol * absolute(b))返回True
+    - print(np.allclose([0.12, 0.17, 0.24, 0.29], [0.13, 0.19, 0.26, 0.31], 0.1))
+      - False
+    - print(np.allclose([0.12, 0.17, 0.24, 0.29], [0.13, 0.18, 0.26, 0.31], 0.1))
+      - True
+29. numpy.isclose(a, b, rtol=1.e-5, atol=1.e-8, equal_nan=False)
+    - absolute(a - b) <= (atol + rtol * absolute(b))返回True
+    - 比较每一个值
 30. np.array_equal
-31. z.flags.writeable
+    - 检查两个数组是否具有相同的形状和元素,还可用在数组和列表之间、列表与列表间的比较
+    - np.array_equal(A,B)
+      - 必须形状一样
+      - 必须参数一样
+      - 才True
+31. np.unique
+    - 该方法排序后，会对数组重新进行降重排序
+    - print(np.unique(np.array([6, 5, 7, 3, 6, 3, 4, 3, 9, 3, 0, 6]))) 
+      - [0 3 4 5 6 7 9]
+    - print(np.unique(np.array([[3, 2, 3, 6], [3, 0, 3, 8], [3, 2, 3, 6]])))
+      - 1,1
+    - print(np.unique(np.array([[3, 2, 3, 6], [3, 0, 3, 8], [3, 2, 3, 6]]),axis=0))
+      - 对列降重
+    - print(np.unique(np.array([[3, 2, 3, 6], [3, 0, 3, 8], [3, 2, 3, 6]]),axis=1))
+      - 对行降重
