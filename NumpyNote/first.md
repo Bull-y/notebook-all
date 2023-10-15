@@ -545,7 +545,7 @@
 22. **np.amax(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
       - 与np.max相同
       - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
-      - keepdims=True，表示列表示
+      - keepdims=True，表示保持原来的array的维度吗
 23. **amin(a, axis=None, out=None, keepdims=< no value >, initial=< no value >, where=< no value >)**
       - 与np.min相同
       - axis=0 代表列 , axis=1 代表行 ， axis= None 代表所有展宽取最大
